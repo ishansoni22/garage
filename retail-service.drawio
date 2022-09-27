@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-09-26T07:04:30.620Z" agent="5.0 (Macintosh)" etag="1914vWXpKwEPfoUXwRGM" version="20.3.0" type="github">
+<mxfile host="app.diagrams.net" modified="2022-09-27T03:50:26.729Z" agent="5.0 (Macintosh)" etag="GgHnAumvqEc-wBi0nkse" version="20.3.0" type="github">
   <diagram id="5P54bRnoej0K6xraSHRH" name="Page-1">
     <mxGraphModel dx="2516" dy="820" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -34,8 +34,8 @@
         <mxCell id="R-bbjsSr86mgTCKb609b-10" value="&lt;b&gt;In store UPI order&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="-560" y="565" width="120" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="R-bbjsSr86mgTCKb609b-11" value="&lt;b&gt;Online CREDIT CARD order&lt;br&gt;&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="-474" y="980" width="180" height="30" as="geometry" />
+        <mxCell id="R-bbjsSr86mgTCKb609b-11" value="&lt;b&gt;Online CREDIT CARD order. Store with Id 0 is the online store&lt;br&gt;&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-664" y="980" width="370" height="30" as="geometry" />
         </mxCell>
         <mxCell id="R-bbjsSr86mgTCKb609b-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1">
           <mxGeometry relative="1" as="geometry">
@@ -88,7 +88,7 @@
         <mxCell id="R-bbjsSr86mgTCKb609b-30" value="filter and send online orders to shipment topic" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="1220" y="795" width="270" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="R-bbjsSr86mgTCKb609b-31" value="&lt;div&gt;filter for prime customers and send loyalty notification events to a loyalty topic.&lt;/div&gt;&lt;div&gt;The loyalty notification event should have loyalty points earned for this order + total loyalty points&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+        <mxCell id="R-bbjsSr86mgTCKb609b-31" value="&lt;div&gt;filter for prime customers and send loyalty notification events to loyalty topic.&lt;/div&gt;&lt;div&gt;The loyalty notification event should have loyalty points earned for this order + total loyalty points&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="1070" y="555" width="540" height="40" as="geometry" />
         </mxCell>
         <mxCell id="R-bbjsSr86mgTCKb609b-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1">
