@@ -1,1 +1,168 @@
-<mxfile host="app.diagrams.net" modified="2022-11-28T07:49:59.212Z" agent="5.0 (Macintosh)" version="20.5.3" etag="vXLyz1TurcsjksgmRc5D" type="github"><diagram id="HaRpQQlY6Cd8Gc8j11LC">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2022-11-28T11:37:16.475Z" agent="5.0 (Macintosh)" etag="V99kfh7vrwqjOnYfvoRy" version="20.5.3" type="github">
+  <diagram id="HaRpQQlY6Cd8Gc8j11LC" name="Page-1">
+    <mxGraphModel dx="3962" dy="806" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="1kqIa1lzGPCmdcYq5m8n-52" value="&lt;div&gt;The &lt;b&gt;SpotSyncService&lt;/b&gt; publishes the event to &lt;br&gt;&lt;/div&gt;&lt;div&gt;a Redis Channel. The service is also responsible to &lt;br&gt;&lt;/div&gt;&lt;div&gt;listen to all these events and sync up &lt;br&gt;&lt;/div&gt;&lt;div&gt;the data structures of all entry terminals&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-1450" y="847" width="300" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="1kqIa1lzGPCmdcYq5m8n-35" value="&lt;div&gt;The &lt;b&gt;SpotAllotmentService&lt;/b&gt; uses a &lt;br&gt;&lt;/div&gt;&lt;div&gt;Redis Bitmap to assign spots. It creates a Redis bitmap = &lt;br&gt;&lt;/div&gt;&lt;div&gt;# of spots in the parking lot. Initially, all fields are set to bit = 1 (Available).&lt;/div&gt;&lt;div&gt;When a booking request for a spot is received, it sets the bit to 0. &lt;br&gt;&lt;/div&gt;&lt;div&gt;It the spot is already taken, an exception is thrown. This ensures &lt;br&gt;&lt;/div&gt;&lt;div&gt;high consistency&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Finally, the parking ticket is saved in a Redis Hash and the ticket is returned&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-1695" y="10" width="420" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="1kqIa1lzGPCmdcYq5m8n-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="1kqIa1lzGPCmdcYq5m8n-2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-2315" y="265" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-2315" y="265" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1kqIa1lzGPCmdcYq5m8n-2" value="Vehicle Entry at an Entry Terminal" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-2540" y="240" width="90" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="1kqIa1lzGPCmdcYq5m8n-3" value="" style="swimlane;startSize=0;" vertex="1" parent="1">
+          <mxGeometry x="-2310" y="210" width="1120" height="570" as="geometry" />
+        </mxCell>
+        <mxCell id="1kqIa1lzGPCmdcYq5m8n-8" value="Application Service" style="swimlane;startSize=20;whiteSpace=wrap;html=1;" vertex="1" parent="1kqIa1lzGPCmdcYq5m8n-3">
+          <mxGeometry x="20" y="20" width="180" height="520" as="geometry" />
+        </mxCell>
+        <mxCell id="1kqIa1lzGPCmdcYq5m8n-12" value="Get Entry Terminal" style="whiteSpace=wrap;html=1;" vertex="1" parent="1kqIa1lzGPCmdcYq5m8n-8">
+          <mxGeometry x="30" y="30" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="1kqIa1lzGPCmdcYq5m8n-21" value="&lt;div&gt;Picked Spot, &lt;br&gt;&lt;/div&gt;&lt;div&gt;Get Parking Lot&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1kqIa1lzGPCmdcYq5m8n-8">
+          <mxGeometry x="55" y="120" width="70" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="1kqIa1lzGPCmdcYq5m8n-38" value="Parking Ticket" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1kqIa1lzGPCmdcYq5m8n-8">
+          <mxGeometry x="55" y="250" width="70" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="1kqIa1lzGPCmdcYq5m8n-10" value="Entry Terminal" style="swimlane;startSize=20;whiteSpace=wrap;html=1;" vertex="1" parent="1kqIa1lzGPCmdcYq5m8n-3">
+          <mxGeometry x="200" y="20" width="180" height="520" as="geometry" />
+        </mxCell>
+        <mxCell id="1kqIa1lzGPCmdcYq5m8n-16" value="Pick Spot. Delegates to a Spot Picker Service" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1kqIa1lzGPCmdcYq5m8n-10">
+          <mxGeometry x="25" y="50" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="1kqIa1lzGPCmdcYq5m8n-11" value="Spot Picker Service" style="swimlane;startSize=20;whiteSpace=wrap;html=1;" vertex="1" parent="1kqIa1lzGPCmdcYq5m8n-3">
+          <mxGeometry x="380" y="20" width="180" height="520" as="geometry" />
+        </mxCell>
+        <mxCell id="1kqIa1lzGPCmdcYq5m8n-17" value="Picks Spot" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1kqIa1lzGPCmdcYq5m8n-11">
+          <mxGeometry x="25" y="90" width="130" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="1kqIa1lzGPCmdcYq5m8n-13" value="Parking Lot" style="swimlane;startSize=20;whiteSpace=wrap;html=1;" vertex="1" parent="1kqIa1lzGPCmdcYq5m8n-3">
+          <mxGeometry x="560" y="20" width="180" height="520" as="geometry" />
+        </mxCell>
+        <mxCell id="1kqIa1lzGPCmdcYq5m8n-24" value="Book Spot and generate a Parking Ticket. Delegates to a Spot Allotment Service" style="whiteSpace=wrap;html=1;" vertex="1" parent="1kqIa1lzGPCmdcYq5m8n-13">
+          <mxGeometry x="30" y="140" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="1kqIa1lzGPCmdcYq5m8n-40" value="Creates a SpotBooked Event. Publishes this event to the Spot Sync Service" style="whiteSpace=wrap;html=1;" vertex="1" parent="1kqIa1lzGPCmdcYq5m8n-13">
+          <mxGeometry x="30" y="300" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="1kqIa1lzGPCmdcYq5m8n-14" value="Spot Allotment Service" style="swimlane;startSize=20;whiteSpace=wrap;html=1;" vertex="1" parent="1kqIa1lzGPCmdcYq5m8n-3">
+          <mxGeometry x="740" y="20" width="180" height="520" as="geometry" />
+        </mxCell>
+        <mxCell id="1kqIa1lzGPCmdcYq5m8n-31" value="Book Spot and generates a Parking Ticket" style="whiteSpace=wrap;html=1;" vertex="1" parent="1kqIa1lzGPCmdcYq5m8n-14">
+          <mxGeometry x="30" y="215" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="1kqIa1lzGPCmdcYq5m8n-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1kqIa1lzGPCmdcYq5m8n-3" source="1kqIa1lzGPCmdcYq5m8n-12">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="220" y="85" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="110" y="85" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1kqIa1lzGPCmdcYq5m8n-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1kqIa1lzGPCmdcYq5m8n-3" source="1kqIa1lzGPCmdcYq5m8n-16" target="1kqIa1lzGPCmdcYq5m8n-17">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="290" y="120" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1kqIa1lzGPCmdcYq5m8n-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1kqIa1lzGPCmdcYq5m8n-3" source="1kqIa1lzGPCmdcYq5m8n-17" target="1kqIa1lzGPCmdcYq5m8n-21">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="150" y="160" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="470" y="160" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1kqIa1lzGPCmdcYq5m8n-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.6;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1kqIa1lzGPCmdcYq5m8n-3" source="1kqIa1lzGPCmdcYq5m8n-24" target="1kqIa1lzGPCmdcYq5m8n-31">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="650" y="283" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1kqIa1lzGPCmdcYq5m8n-41" value="Spot Sync Service" style="swimlane;startSize=20;whiteSpace=wrap;html=1;" vertex="1" parent="1kqIa1lzGPCmdcYq5m8n-3">
+          <mxGeometry x="920" y="20" width="180" height="520" as="geometry" />
+        </mxCell>
+        <mxCell id="1kqIa1lzGPCmdcYq5m8n-47" value="Sync Spots b/w terminals" style="whiteSpace=wrap;html=1;" vertex="1" parent="1kqIa1lzGPCmdcYq5m8n-41">
+          <mxGeometry x="30" y="360" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="1kqIa1lzGPCmdcYq5m8n-43" value="&lt;b&gt;SPOT BOOKING FLOW&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1kqIa1lzGPCmdcYq5m8n-3">
+          <mxGeometry x="480" y="540" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="1kqIa1lzGPCmdcYq5m8n-48" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=-0.042;entryY=0.617;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1kqIa1lzGPCmdcYq5m8n-3" source="1kqIa1lzGPCmdcYq5m8n-40" target="1kqIa1lzGPCmdcYq5m8n-47">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="650" y="417" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1kqIa1lzGPCmdcYq5m8n-5" value="/parking-lot/{id}/terminals{terminal}/book" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-2540" y="290" width="240" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="1kqIa1lzGPCmdcYq5m8n-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="1kqIa1lzGPCmdcYq5m8n-21">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-1720" y="400" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-2040" y="400" />
+              <mxPoint x="-2040" y="400" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1kqIa1lzGPCmdcYq5m8n-25" value="" style="sketch=0;aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/mscae/Cache_Redis_Product.svg;" vertex="1" parent="1">
+          <mxGeometry x="-1865" y="140" width="50" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="1kqIa1lzGPCmdcYq5m8n-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="1kqIa1lzGPCmdcYq5m8n-17" target="1kqIa1lzGPCmdcYq5m8n-25">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-1840" y="210" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1kqIa1lzGPCmdcYq5m8n-29" value="&lt;div&gt;&lt;b&gt;NearestSpotPickerService&lt;/b&gt; uses &lt;br&gt;&lt;/div&gt;&lt;div&gt;a Redis Sorted Set &lt;br&gt;&lt;/div&gt;&lt;div&gt;(i.e a min heap - based on spot distances from a terminal) &lt;/div&gt;&lt;div&gt;to pick spots near to the entry terminal.&lt;/div&gt;&lt;div&gt;&amp;nbsp;&lt;br&gt;&lt;/div&gt;&lt;div&gt;The &lt;b&gt;RandomSpotPickerService (to do)&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;will use a Redis Set to pick spots randomly&lt;br&gt; &lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-2040" y="30" width="330" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="1kqIa1lzGPCmdcYq5m8n-30" value="" style="sketch=0;aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/mscae/Cache_Redis_Product.svg;" vertex="1" parent="1">
+          <mxGeometry x="-1505" y="140" width="50" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="1kqIa1lzGPCmdcYq5m8n-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="1kqIa1lzGPCmdcYq5m8n-31" target="1kqIa1lzGPCmdcYq5m8n-30">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-1480" y="190" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1kqIa1lzGPCmdcYq5m8n-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="1kqIa1lzGPCmdcYq5m8n-31">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-2160" y="510" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-2150" y="510" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1kqIa1lzGPCmdcYq5m8n-39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="1kqIa1lzGPCmdcYq5m8n-38">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-2470" y="510" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1kqIa1lzGPCmdcYq5m8n-45" value="User" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="-2510" y="490" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="1kqIa1lzGPCmdcYq5m8n-49" value="" style="sketch=0;aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/mscae/Cache_Redis_Product.svg;" vertex="1" parent="1">
+          <mxGeometry x="-1325" y="810" width="50" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="1kqIa1lzGPCmdcYq5m8n-51" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=-0.095;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="1kqIa1lzGPCmdcYq5m8n-47" target="1kqIa1lzGPCmdcYq5m8n-49">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
